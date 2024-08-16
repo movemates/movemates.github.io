@@ -4,11 +4,11 @@
     <!-- 
     More Templates Visit ==> Free-Template.co
     -->
-    <title>MoveMates limited</title>
+    <title>MoveMates - Removals and house shifting</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="MoveMates limited" />
-    <meta name="keywords" content="movemates, removals, waste removals, shifting, van with man, romford, romford removals, eastham, eastham removals, van for rent" />
+    <meta name="keywords" content="movemates, removals, waste removals, shifting, house shifting, van with man, romford, romford removals, eastham, eastham removals, van for rent" />
     <meta name="author" content="MoveMates" />
     
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
@@ -34,7 +34,7 @@
         <div class="collapse navbar-collapse" id="ftco-nav">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active"><a href="#section-home" class="nav-link">Home</a></li>
-            <!--<li class="nav-item"><a href="#section-features" class="nav-link">Features</a></li>-->
+            <li class="nav-item"><a href="#section-features" class="nav-link">Why Us</a></li>
             <li class="nav-item"><a href="#section-services" class="nav-link">Services</a></li>
             <li class="nav-item"><a href="#section-pricing" class="nav-link">Pricing</a></li>
             <!--<li class="nav-item"><a href="#section-about" class="nav-link">About</a></li>-->
@@ -538,11 +538,67 @@
           </div>
         </div>
       </div>
+<!--        <div ng-app="myApp" ng-controller="myCtrl">
+
+            <form ng-submit="saveToCSV()">
+                <label>Name:</label>
+                <input type="text" ng-model="formData.name" required><br>
+
+                <label>Email:</label>
+                <input type="email" ng-model="formData.email" required><br>
+
+                <label>Age:</label>
+                <input type="number" ng-model="formData.age" required><br>
+
+                <button type="submit">Save to CSV</button>
+            </form>
+
+        </div>-->
     </footer>
 
     <!-- loader -->
-    <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#4586ff"/></svg></div>
+    <div id="ftco-loader" class="show fullscreen">
+        <svg class="circular" width="48px" height="48px">
+            <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/>
+            <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#4586ff"/>
+        </svg>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script>
 
+        var app = angular.module("myApp", []);
+
+        app.controller("myCtrl", function($scope) {
+          $scope.formData = {};
+
+        $scope.saveToCSV = function() {
+            // Convert the form data to CSV
+            var csvContent = "data:text/csv;charset=utf-8,"
+                           + "Name,Email,Age\n"
+                           + $scope.formData.name + ","
+                           + $scope.formData.email + ","
+                           + $scope.formData.age + "\n";
+
+            // Encode the CSV content
+            var encodedUri = encodeURI(csvContent);
+
+            // Create a link element to download the CSV file
+            var link = document.createElement("a");
+            link.setAttribute("href", encodedUri);
+            link.setAttribute("download", "form_data.csv");
+
+            // Append the link to the body
+            document.body.appendChild(link);
+
+            // Simulate a click on the link to download the CSV
+            link.click();
+
+            // Remove the link from the DOM
+            document.body.removeChild(link);
+            };
+        });
+
+    </script>
 
     <script src="js/jquery.min.js"></script>
     <script src="js/popper.min.js"></script>
@@ -551,13 +607,12 @@
     <script src="js/jquery.waypoints.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/jquery.animateNumber.min.js"></script>
-    
+
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
     <script src="js/google-map.js"></script>
 
     <script src="js/main.js"></script>
 
-    
   </body>
 </html>
